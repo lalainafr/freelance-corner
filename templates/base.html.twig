@@ -1,319 +1,526 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-		<meta name="description" content=""/>
-		<meta name="author" content=""/>
-		<title>Creative - Start Bootstrap Theme</title>
-		<!-- Favicon-->
-		<link
-		rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
-		<!-- Bootstrap Icons-->
-		<link
-		href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
-		<!-- Google fonts-->
-		<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet"/>
-		<link
-		href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css"/>
-		<!-- SimpleLightbox plugin CSS-->
-		<link
-		href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet"/>
-		<!-- Core theme CSS (includes Bootstrap)-->
-		<link href="css/styles.css" rel="stylesheet"/>
-	</head>
 
-	{% block body %}
-		<body
-			id="page-top">
-			<!-- Navigation-->
-			<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-				<div class="container px-4 px-lg-5">
-					<a class="navbar-brand" href="#page-top">- FREELANCE CORNER -</a>
-					<button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarResponsive">
-						<ul class="navbar-nav ms-auto my-2 my-lg-0">
-							<li class="nav-item">
-								<a class="nav-link" href="#home">Accueil</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#services" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Nos services
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-									<a class="dropdown-item" href="#">Assistance virtuelle</a>
-									<a class="dropdown-item" href="#">B.P.O</a>
-									<a class="dropdown-item" href="#">E-reputation</a>
-									<a class="dropdown-item" href="#">Digital</a>
-									<a class="dropdown-item" href="#">Recruter</a>
-								</div>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#about">Qui sommes nous</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">FAQ</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Blog</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#contact">Contact</a>
-							</li>
-						</ul>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>Freelance corner</title>
+	<!-- Favicon-->
+	<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+	<!-- Bootstrap Icons-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+	<!-- Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+		rel="stylesheet" type="text/css" />
+	<!-- SimpleLightbox plugin CSS-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+
+{% block body %}
+
+<body id="page-top">
+	<!-- Navigation-->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+		<div class="container px-4 px-lg-5">
+			<a class="navbar-brand" href="#page-top"> <i class="bi bi-arrow-repeat"></i> &nbsp FREELANCE CORNER
+			</a>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ms-auto my-2 my-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="#home">Accueil</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">Qui sommes nous</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#services">Nos services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#portfolio">Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#faq">FAQ</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">Contact</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Missions</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Masthead-->
+	<header class="masthead" id="home">
+		<div class="container px-4 px-lg-5 h-100">
+			<div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+				<div class="col-lg-8 align-self-end">
+
+					<h1 class="text-white font-weight-bold"> 
+						<i class="bi bi-sliders fs-1"></i>&nbsp&nbsp
+						F r e e l a n c e ...
+						<br>C O R N E R
+					</h1>
+					<p class="text-white-75 mb-5">
+						- Sehatra hiaonan'ny Orin'asa mpandraharaha sy ny Freelance -
+						<br><br>
+						Ad esse amet reprehenderit ut mollit amet est id fugiat enim Lorem dolor. Mollit voluptate Lorem cillum ipsum cupidatat ea cillum ex. Ullamco sint id est culpa minim velit laborum. Occaecat ex dolore consequat eiusmod est nulla eiusmod exercitation dolor ad. Quis duis in nisi cupidatat quis.
+					</p>
+					<hr class="divider" />
+				</div>
+				<div class="col-lg-8 align-self-baseline">
+					<p class="text-white-75 mb-5">Vous souhaitez chercher un freelance pour executer votre projet?
+					</p>
+					<p class="text-white-75 mb-5">Vous souhaitez déposer votre projet à réaliser?
+					</p>
+					<p class="text-white-75 mb-5">Vous voulez voir la liste des missions disponibles?
+					</p>
+					<p class="text-white-75 mb-5">Freelance C O R N E R est la plateforme idéale entre les freelance et les
+						employeurs
+					</p>
+					<a class="btn btn-primary btn-xl" href="#about">Savoir qui nous sommes</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- About-->
+	<section class="page-section bg-secondary" id="about">
+		<div class="container px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class="col-lg-8 text-center">
+					<i class="bi bi-diagram-3 fs-1 text-light"></i>
+					<h2 class="text-white mt-0">Qui sommes nous!</h2>
+					<hr class="divider divider-light" />
+					<p class="text-white-75 mb-4">LoremFugiat laboris irure culpa sit. Tempor sint ipsum occaecat culpa
+						duis amet anim quis aliqua et. Veniam quis aliquip occaecat nisi sit duis laboris. Qui esse
+						proident cupidatat cupidatat nulla duis ad in. Nostrud eiusmod ullamco consectetur esse ipsum
+						elit est. Ea elit id non duis enim. <br> <br> Fugiat exercitation incididunt occaecat est tempor
+						ea Lorem pariatur irure. Nulla anim est eiusmod laboris adipisicing ex id minim sint sunt.
+						Nostrud commodo ipsum sint sit occaecat incididunt labore adipisicing ullamco elit.Dolore irure
+						elit duis dolore pariatur exercitation anim irure dolore. Cillum esse consequat ad qui
+						consectetur ullamco pariatur nostrud ipsum esse ea qui nostrud. Dolor consequat laborum fugiat
+						laborum magna occaecat ex Lorem ullamco. Ipsum commodo ipsum excepteur dolor exercitation minim.
+					</p>
+					<a class="btn btn-light btn-xl" href="#services">Voir les solutions proposées</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Services-->
+	<section class="page-section" id="services">
+		<div class="container px-4 px-lg-5">
+
+			<h2 class="text-center mt-0"><i class="bi bi-node-plus fs-1 text-muted"></i> <br>Solutions proposées</h2>
+			<hr class="divider" />
+			<div class="row gx-4 gx-lg-5">
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="mt-5">
+						<div class="mb-2">
+							<i class="bi bi-grid-1x2 fs-1 text-primary"></i>
+						</div>
+						<h3 class="h4 mb-2">Entreprise</h3>
+						<p class="text-muted mb-0">Des missions de tout genre avec des prix interessants proposées par
+							les professionnel des entreprises</p>
 					</div>
 				</div>
-			</nav>
-			<!-- Masthead-->
-			<header class="masthead" id="home">
-				<div class="container px-4 px-lg-5 h-100">
-					<div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-						<div class="col-lg-8 align-self-end">
-							<h1 class="text-white font-weight-bold">f r e e l a n c e
-								<br>C O R N E R</h1>
-							<hr class="divider"/>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="mt-5">
+						<div class="mb-2">
+							<i class="bi-laptop fs-1 text-primary"></i>
 						</div>
-						<div class="col-lg-8 align-self-baseline">
-							<p class="text-white-75 mb-5">Vous souhaitez chercher un freelance pour executer votre projet?
-							</p>
-							<p class="text-white-75 mb-5">Vous souhaitez déposer votre projet à réaliser?
-							</p>
-							<p class="text-white-75 mb-5">Vous voulez voir la liste des missions disponibles?
-							</p>
-							<p class="text-white-75 mb-5">FREELANCE CORNER est la plateforme idéale entre les freelance et les employeurs
-							</p>
-							<a class="btn btn-primary btn-xl" href="#home">Find Out More</a>
-						</div>
+						<h3 class="h4 mb-2">Equipement</h3>
+						<p class="text-muted mb-0">Une plateforme regroupant l'offre et la demande sur la nouvelle
+							technolgie de l'information.</p>
 					</div>
 				</div>
-			</header>
-			<!-- About-->
-			<section class="page-section bg-secondary" id="about">
-				<div class="container px-4 px-lg-5">
-					<div class="row gx-4 gx-lg-5 justify-content-center">
-						<div class="col-lg-8 text-center">
-							<h2 class="text-white mt-0">We've got what you need!</h2>
-							<hr class="divider divider-light"/>
-							<p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-							<a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="mt-5">
+						<div class="mb-2">
+							<i class="bi-globe fs-1 text-primary"></i>
 						</div>
+						<h3 class="h4 mb-2">International</h3>
+						<p class="text-muted mb-0">Une plateforme proposant des solution et des offres au niveau local
+							et international</p>
 					</div>
 				</div>
-			</section>
-			<!-- Services-->
-			<section class="page-section" id="services">
-				<div class="container px-4 px-lg-5">
-					<h2 class="text-center mt-0">At Your Service</h2>
-					<hr class="divider"/>
-					<div class="row gx-4 gx-lg-5">
-						<div class="col-lg-3 col-md-6 text-center">
-							<div class="mt-5">
-								<div class="mb-2">
-									<i class="bi-gem fs-1 text-primary"></i>
-								</div>
-								<h3 class="h4 mb-2">Sturdy Themes</h3>
-								<p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
-							</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="mt-5">
+						<div class="mb-2">
+							<i class="bi-person-badge-fill fs-1 text-primary"></i>
 						</div>
-						<div class="col-lg-3 col-md-6 text-center">
-							<div class="mt-5">
-								<div class="mb-2">
-									<i class="bi-laptop fs-1 text-primary"></i>
-								</div>
-								<h3 class="h4 mb-2">Up to Date</h3>
-								<p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 text-center">
-							<div class="mt-5">
-								<div class="mb-2">
-									<i class="bi-globe fs-1 text-primary"></i>
-								</div>
-								<h3 class="h4 mb-2">Ready to Publish</h3>
-								<p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 text-center">
-							<div class="mt-5">
-								<div class="mb-2">
-									<i class="bi-heart fs-1 text-primary"></i>
-								</div>
-								<h3 class="h4 mb-2">Made with Love</h3>
-								<p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- Portfolio-->
-			<div id="portfolio">
-				<div class="container-fluid p-0">
-					<div class="row g-0">
-						<div class="col-lg-4 col-sm-6">
-							<a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
-								<img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..."/>
-								<div class="portfolio-box-caption">
-									<div class="project-category text-white-50">Category</div>
-									<div class="project-name">Project Name</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-4 col-sm-6">
-							<a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
-								<img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..."/>
-								<div class="portfolio-box-caption">
-									<div class="project-category text-white-50">Category</div>
-									<div class="project-name">Project Name</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-4 col-sm-6">
-							<a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
-								<img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..."/>
-								<div class="portfolio-box-caption">
-									<div class="project-category text-white-50">Category</div>
-									<div class="project-name">Project Name</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-4 col-sm-6">
-							<a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
-								<img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..."/>
-								<div class="portfolio-box-caption">
-									<div class="project-category text-white-50">Category</div>
-									<div class="project-name">Project Name</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-4 col-sm-6">
-							<a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
-								<img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..."/>
-								<div class="portfolio-box-caption">
-									<div class="project-category text-white-50">Category</div>
-									<div class="project-name">Project Name</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-4 col-sm-6">
-							<a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
-								<img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..."/>
-								<div class="portfolio-box-caption p-3">
-									<div class="project-category text-white-50">Category</div>
-									<div class="project-name">Project Name</div>
-								</div>
-							</a>
-						</div>
+						<h3 class="h4 mb-2">Freelance</h3>
+						<p class="text-muted mb-0">Une multitude de freelance, des professionel du métier pouvant être
+							soutraités</p>
 					</div>
 				</div>
 			</div>
-			<!-- Call to action-->
+			<br>
+			<div class="text-center mt-0">
+				<a class="btn btn-primary btn-xl" href="#portfolio">Voir les portfolios</a>
+			</div>
+		</div>
+	</section>
+	<!-- Portfolio-->
+	<div id="portfolio">
+		<div class="container-fluid p-0">
+			<div class="row gx-4 gx-lg-5">
+				<div class="text-center">
+					<div class="mt-5">
+						<div class="mb-2">
+							<i class="bi bi-palette2 fs-1 text-muted"></i>
+						</div>
+						<h3 class="h4 mb-2">Portfolio</h3>
+						<hr class="divider" />
+					</div>
+				</div>
+				<div class="row g-0">
+					<div class="col-lg-4 col-sm-6">
+						<a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
+							<img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
+							<div class="portfolio-box-caption">
+								<div class="project-category text-white-50">Mission</div>
+								<div class="project-name">Projet pour un collectionneur</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-4 col-sm-6">
+						<a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
+							<img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
+							<div class="portfolio-box-caption">
+								<div class="project-category text-white-50">Mission</div>
+								<div class="project-name">Projet pour un ebeniste</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-4 col-sm-6">
+						<a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
+							<img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
+							<div class="portfolio-box-caption">
+								<div class="project-category text-white-50">Mission</div>
+								<div class="project-name">Projet pour un photographe</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-4 col-sm-6">
+						<a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
+							<img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
+							<div class="portfolio-box-caption">
+								<div class="project-category text-white-50">Mission</div>
+								<div class="project-name">Projet pouyr un cuisinier</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-4 col-sm-6">
+						<a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
+							<img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
+							<div class="portfolio-box-caption">
+								<div class="project-category text-white-50">Mission</div>
+								<div class="project-name">Projet pour un pecheur</div>
+							</div>
+						</a>
+					</div>
+					<div class="col-lg-4 col-sm-6">
+						<a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
+							<img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
+							<div class="portfolio-box-caption p-3">
+								<div class="project-category text-white-50">Mission</div>
+								<div class="project-name">Projet pour un bricoleur</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="text-center">
+				<br>
+				<a class="btn btn-primary btn-xl" href="#faq">Voir les Foires aux questions</a>
+				<br><br><br><br>
+			</div>
+				
+		</div>
+		<!-- FAQ -->
+		<div id="faq">
 			<section class="page-section bg-dark text-white">
 				<div class="container px-4 px-lg-5 text-center">
-					<h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-					<a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
+					<i class="bi bi-patch-question fs-1"></i>
+					<h2 class="mb-4">Foire aux questions</h2>
+					<hr class="divider" />
 				</div>
+				<div class="container">
+					<div class="row">
+						<p id="top-faq"><i class="bi bi-arrow-right text-primary"></i>&nbsp Pourquoi nous choisir</p>
+						<div id="content-faq">
+							<p>Esse veniam adipisicing exercitation reprehenderit cillum mollit minim aute pariatur ut
+								mollit
+								Lorem
+								pariatur. Sint quis anim ad eiusmod fugiat aliquip consequat anim et. Velit dolor
+								reprehenderit
+								ad
+								nostrud tempor amet.</p>
+							<p>Nisi exercitation reprehenderit sit ipsum adipisicing proident est laborum cupidatat
+								consequat
+								non
+								sit laboris. Cillum nostrud consequat laborum magna officia pariatur et sunt Lorem.
+								Aliqua
+								occaecat
+								reprehenderit minim cillum officia elit elit ad reprehenderit quis nostrud tempor. Elit
+								cillum
+								do
+								non anim ea laboris veniam nisi mollit esse elit officia dolore.</p>
+						</div>
+						<p id="top-faq"><i class="bi bi-arrow-right text-primary"></i>&nbsp Comment déposer une mission
+						</p>
+						<div id="content-faq">
+							<p>Anim velit ipsum aliquip eiusmod. Exercitation cupidatat consequat exercitation ex nulla
+								incididunt.
+								Lorem nostrud aute culpa elit ex adipisicing. ⁄Dolor reprehenderit fugiat culpa aliquip
+								ad
+								laboris
+								est. Ea incididunt est ea eu nulla irure qui mollit excepteur aliquip. Eiusmod officia
+								proident
+								do
+								ullamco commodo consequat ex pariatur non exercitation sunt. Sunt qui officia excepteur
+								labore
+								esse
+								ex esse occaecat adipisicing irure sint tempor. Et incididunt excepteur pariatur culpa
+								sit
+								dolor
+								irure anim aute incididunt. Cupidatat eiusmod veniam officia reprehenderit do ea elit.
+								Consequat
+								qui
+								consectetur anim cupidatat.
+								<br><br>Aliqua adipisicing cillum aliqua officia cupidatat commodo nostrud ut. Occaecat
+								consequat
+								excepteur aliquip ullamco irure ipsum sint sunt Lorem sit consequat ex do nostrud. Qui
+								proident
+								exercitation ut adipisicing ipsum deserunt irure enim minim dolore anim.
+							</p>
+						</div>
+						<p id="top-faq"><i class="bi bi-arrow-right text-primary"></i>&nbsp Formalité pour soustraiter
+							une
+							mission</p>
+						<div id="content-faq">
+							<p>Esse veniam adipisicing exercitation reprehenderit cillum mollit minim aute pariatur ut
+								mollit
+								Lorem
+								pariatur. Sint quis anim ad eiusmod fugiat aliquip consequat anim et. Velit dolor
+								reprehenderit
+								ad
+								nostrud tempor amet.</p>
+							<p>Nisi exercitation reprehenderit sit ipsum adipisicing proident est laborum cupidatat
+								consequat
+								non
+								sit laboris. Cillum nostrud consequat laborum magna officia pariatur et sunt Lorem.
+								Aliqua
+								occaecat
+								reprehenderit minim cillum officia elit elit ad reprehenderit quis nostrud tempor. Elit
+								cillum
+								do
+								non anim ea laboris veniam nisi mollit esse elit officia dolore.</p>
+							<p>Esse veniam adipisicing exercitation reprehenderit cillum mollit minim aute pariatur ut
+								mollit
+								Lorem
+								pariatur. Sint quis anim ad eiusmod fugiat aliquip consequat anim et. Velit dolor
+								reprehenderit
+								ad
+								nostrud tempor amet.</p>
+							<p>Nisi exercitation reprehenderit sit ipsum adipisicing proident est laborum cupidatat
+								consequat
+								non
+								sit laboris. Cillum nostrud consequat laborum magna officia pariatur et sunt Lorem.
+								Aliqua
+								occaecat
+								reprehenderit minim cillum officia elit elit ad reprehenderit quis nostrud tempor. Elit
+								cillum
+								do
+								non anim ea laboris veniam nisi mollit esse elit officia dolore.</p>
+						</div>
+						<p id="top-faq"><i class="bi bi-arrow-right text-primary"></i>&nbsp Avoir une assistance</p>
+						<div id="content-faq">
+							<p>Anim velit ipsum aliquip eiusmod. Exercitation cupidatat consequat exercitation ex nulla
+								incididunt.
+								Lorem nostrud aute culpa elit ex adipisicing. ⁄Dolor reprehenderit fugiat culpa aliquip
+								ad
+								laboris
+								est. Ea incididunt est ea eu nulla irure qui mollit excepteur aliquip. Eiusmod officia
+								proident
+								do
+								ullamco commodo consequat ex pariatur non exercitation sunt. Sunt qui officia excepteur
+								labore
+								esse
+								ex esse occaecat adipisicing irure sint tempor. Et incididunt excepteur pariatur culpa
+								sit
+								dolor
+								irure anim aute incididunt. Cupidatat eiusmod veniam officia reprehenderit do ea elit.
+								Consequat
+								qui
+								consectetur anim cupidatat.
+								<br><br>Aliqua adipisicing cillum aliqua officia cupidatat commodo nostrud ut. Occaecat
+								consequat
+								excepteur aliquip ullamco irure ipsum sint sunt Lorem sit consequat ex do nostrud. Qui
+								proident
+								exercitation ut adipisicing ipsum deserunt irure enim minim dolore anim.
+							</p>
+							<p>Anim velit ipsum aliquip eiusmod. Exercitation cupidatat consequat exercitation ex nulla
+								incididunt.
+								Lorem nostrud aute culpa elit ex adipisicing. ⁄Dolor reprehenderit fugiat culpa aliquip
+								ad
+								laboris
+								est. Ea incididunt est ea eu nulla irure qui mollit excepteur aliquip. Eiusmod officia
+								proident
+								do
+								ullamco commodo consequat ex pariatur non exercitation sunt. Sunt qui officia excepteur
+								labore
+								esse
+								ex esse occaecat adipisicing irure sint tempor. Et incididunt excepteur pariatur culpa
+								sit
+								dolor
+								irure anim aute incididunt. Cupidatat eiusmod veniam officia reprehenderit do ea elit.
+								Consequat
+								qui
+								consectetur anim cupidatat.
+								<br><br>Aliqua adipisicing cillum aliqua officia cupidatat commodo nostrud ut. Occaecat
+								consequat
+								excepteur aliquip ullamco irure ipsum sint sunt Lorem sit consequat ex do nostrud. Qui
+								proident
+								exercitation ut adipisicing ipsum deserunt irure enim minim dolore anim.
+							</p>
+						</div>
+					</div>
+					<br>
+					<div class="text-center">
+						<a class="btn btn-light btn-xl" href="#contact">Voir le formulaire de contact</a>
+					</div>
 			</section>
-			<!-- Contact-->
-			<section class="page-section" id="contact">
-				<div class="container px-4 px-lg-5">
-					<div class="row gx-4 gx-lg-5 justify-content-center">
-						<div class="col-lg-8 col-xl-6 text-center">
-							<h2 class="mt-0">Let's Get In Touch!</h2>
-							<hr class="divider"/>
-							<p class="text-muted mb-5">Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!</p>
-						</div>
-					</div>
-					<div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-						<div class="col-lg-6">
-							<!-- * * * * * * * * * * * * * * *-->
-							<!-- * * SB Forms Contact Form * *-->
-							<!-- * * * * * * * * * * * * * * *-->
-							<!-- This form is pre-integrated with SB Forms.-->
-							<!-- To make this form functional, sign up at-->
-							<!-- https://startbootstrap.com/solution/contact-forms-->
-							<!-- to get an API token!-->
-								<form
-								id="contactForm" data-sb-form-api-token="API_TOKEN"> <!-- Name input-->
-								<div class="form-floating mb-3">
-									<input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required"/>
-									<label for="name">Full name</label>
-									<div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-								</div>
-								<!-- Email address input-->
-								<div class="form-floating mb-3">
-									<input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email"/>
-									<label for="email">Email address</label>
-									<div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-									<div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-								</div>
-								<!-- Phone number input-->
-								<div class="form-floating mb-3">
-									<input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required"/>
-									<label for="phone">Phone number</label>
-									<div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-								</div>
-								<!-- Message input-->
-								<div class="form-floating mb-3">
-									<textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-									<label for="message">Message</label>
-									<div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-								</div>
-								<!-- Submit success message-->
-								<!---->
-								<!-- This is what your users will see when the form-->
-								<!-- has successfully submitted-->
-									<div class="d-none" id="submitSuccessMessage"> <div class="text-center mb-3">
-										<div class="fw-bolder">Form submission successful!</div>
-										To activate this form, sign up at
-										<br/>
-										<a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-									</div>
-								</div>
-								<!-- Submit error message-->
-								<!---->
-								<!-- This is what your users will see when there is-->
-								<!-- an error submitting the form-->
-									<div class="d-none" id="submitErrorMessage"> <div class="text-center text-danger mb-3">Error sending message!</div>
-								</div>
-								<!-- Submit Button-->
-								<div class="d-grid">
-									<button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Submit</button>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="row gx-4 gx-lg-5 justify-content-center">
-						<div class="col-lg-4 text-center mb-5 mb-lg-0">
-							<i class="bi-phone fs-2 mb-3 text-muted"></i>
-							<div>+1 (555) 123-4567</div>
-						</div>
+		</div>
+		<!-- Contact-->
+		<section class="page-section" id="contact">
+			<div class="container px-4 px-lg-5">
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+					<div class="col-lg-8 col-xl-6 text-center">
+						<i class="bi bi-mailbox fs-1 text-muted"></i>
+						<h2 class="mt-0">Formulaire de contact!</h2>
+						<hr class="divider" />
+						<p class="text-muted mb-5">Afin de nous contacter, merci remplir le formulaire suivant</p>
 					</div>
 				</div>
-			</section>
-			<!-- Footer-->
-			<footer class="bg-light py-5">
-				<div class="container px-4 px-lg-5">
-					<div class="small text-center text-muted">Copyright &copy; 2023 - Company Name</div>
+				<div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+					<div class="col-lg-6">
+						<!-- * * * * * * * * * * * * * * *-->
+						<!-- * * SB Forms Contact Form * *-->
+						<!-- * * * * * * * * * * * * * * *-->
+						<!-- This form is pre-integrated with SB Forms.-->
+						<!-- To make this form functional, sign up at-->
+						<!-- https://startbootstrap.com/solution/contact-forms-->
+						<!-- to get an API token!-->
+						<form id="contactForm" data-sb-form-api-token="API_TOKEN">
+							<!-- Name input-->
+							<div class="form-floating mb-3">
+								<input class="form-control" id="name" type="text" placeholder="Enter your name..."
+									data-sb-validations="required" />
+								<label for="name">Nom & prénom</label>
+								<div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+							</div>
+							<!-- Email address input-->
+							<div class="form-floating mb-3">
+								<input class="form-control" id="email" type="email" placeholder="name@example.com"
+									data-sb-validations="required,email" />
+								<label for="email">Adresse mail</label>
+								<div class="invalid-feedback" data-sb-feedback="email:required">An email is required.
+								</div>
+								<div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+							</div>
+							<!-- Phone number input-->
+							<div class="form-floating mb-3">
+								<input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
+									data-sb-validations="required" />
+								<label for="phone">Numéro de téléphone</label>
+								<div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is
+									required.
+								</div>
+							</div>
+							<!-- Message input-->
+							<div class="form-floating mb-3">
+								<textarea class="form-control" id="message" type="text"
+									placeholder="Enter your message here..." style="height: 10rem"
+									data-sb-validations="required"></textarea>
+								<label for="message">Message</label>
+								<div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+								</div>
+							</div>
+							<!-- Submit success message-->
+							<!---->
+							<!-- This is what your users will see when the form-->
+							<!-- has successfully submitted-->
+							<div class="d-none" id="submitSuccessMessage">
+								<div class="text-center mb-3">
+									<div class="fw-bolder">Form submission successful!</div>
+									To activate this form, sign up at
+									<br />
+									<a
+										href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+								</div>
+							</div>
+							<!-- Submit error message-->
+							<!---->
+							<!-- This is what your users will see when there is-->
+							<!-- an error submitting the form-->
+							<div class="d-none" id="submitErrorMessage">
+								<div class="text-center text-danger mb-3">Error sending message!</div>
+							</div>
+							<!-- Submit Button-->
+							<div class="d-grid">
+								<button class="btn btn-primary btn-xl disabled" id="submitButton"
+									type="submit">Submit</button>
+							</div>
+						</form>
+					</div>
 				</div>
-			</footer>
-			<!-- Bootstrap core JS-->
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-			<!-- SimpleLightbox plugin JS-->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-			<!-- Core theme JS-->
-			<script src="js/scripts.js"></script>
-			<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-			<!-- * *                               SB Forms JS                               * *-->
-			<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-			<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *--><script src="https://cdn.startbootstrap.com/sb-forms-latest.js"> </script>
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+					<div class="col-lg-4 text-center mb-5 mb-lg-0">
+						<i class="bi-phone fs-2 mb-3 text-muted"></i>
+						<div>+261 23 45 678 90</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Footer-->
+		<footer class="bg-light py-5">
+			<div class="container px-4 px-lg-5">
+				<div class="small text-center text-muted">FREELANCE CORNER <br> La référence dans le domaine du
+					sous-traitance </div>
+				<br>
+				<div class="small text-center text-muted">Copyright &copy; 2023 </div>
+			</div>
+		</footer>
+		<!-- Bootstrap core JS-->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- SimpleLightbox plugin JS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+		<!-- Core theme JS-->
+		<script src="js/scripts.js"></script>
+		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+		<!-- * *                               SB Forms JS                               * *-->
+		<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+		<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"> </script>
 
 		{% endblock %}
 		{% block javascripts %}
-			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		{% endblock %}
 
-	</body>
+</body>
+
 </html>
