@@ -3,11 +3,13 @@
 namespace App\DataFixtures;
 
 use Faker\Factory;
+use App\Entity\User;
 use Faker\Generator;
 use App\Entity\Missions;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 
 class AppFixtures extends Fixture
@@ -18,16 +20,50 @@ class AppFixtures extends Fixture
      */
     private Generator $faker;
 
-    private $reservations;
+    private $hasher;
 
-    public function __construct()
+    public function __construct(UserPasswordHasherInterface $hasher)
     {
         $this->faker = Factory::create('fr_FR');
+        $this->hasher = $hasher;
     }
+
 
     // Mise en place des FIXTURES
     public function load(ObjectManager $manager)
     {
+
+        //USER
+        // création de l'user admin
+        $admin = new User();
+        $admin->setFullName('Administrateur')
+            ->setEmail('admin@test.test')
+            ->setPassword($this->hasher->hashPassword($admin, 'Admin*123'))
+            ->setRoles(['ROLE_EMP', 'ROLE_USER']);
+        $manager->persist($admin);
+
+        // création de l'user employeur
+        for ($i = 0; $i < 3; $i++) {
+            $employeur = new User();
+            $employeur->setFullName($this->faker->name())
+                ->setEmail('Employeur' . $i . '@test.test')
+                ->setPassword($this->hasher->hashPassword($employeur, 'Employeur*123'))
+                ->setRoles(['ROLE_EMP']);
+            $users[] = $employeur;
+            $manager->persist($employeur);
+        }
+
+        // création de l'user freelance
+        for ($i = 0; $i < 3; $i++) {
+            $freelance = new User();
+            $freelance->setFullName($this->faker->name())
+                ->setEmail('Freelance' . $i . '@test.test')
+                ->setPassword($this->hasher->hashPassword($freelance, 'Freelance*123'))
+                ->setRoles(['ROLE_USER']);
+            $users[] = $freelance;
+            $manager->persist($freelance);
+        }
+
         //MISSION
         $missions = [];
         for ($i = 0; $i < 10; $i++) {
@@ -37,10 +73,12 @@ class AppFixtures extends Fixture
             $mission->setDeadline($this->faker->dateTimeBetween('+10 day', '20 days'));
             $mission->setPrice(mt_rand(400, 800));
             $mission->setCreatedAt($this->faker->dateTimeBetween('-10 day', '-2 days'));
+            $mission->setUser($users[mt_rand(1, count($users) - 1)]);
+            $missions[] = $mission;
             $manager->persist($mission);
-         }
+        }
+
 
         $manager->flush();
     }
 }
-
