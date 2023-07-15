@@ -1,0 +1,61 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}
+	Liste des missions
+{% endblock %}
+
+{% block body %}
+	<section>
+		<h1 class="text-primary text-center">
+			- LISTE DES MISSIONS -
+		</h1>
+		<br>
+		<div class="row justify-content-center">
+			<div class="col-md-10">
+				<a href="{{path('mission_new')}}"> Déposer une mission </a>
+
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col" style="width:5%;">Titre
+							</th>
+							<th scope="col" style="width:50%;">Description
+							</th>
+							<th scope="col">Prix
+							</th>
+
+							<th scope="col">Délais</th>
+							<th scope="col">
+								Date création
+							</th>
+							<th scope="col">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for mission in missions %}
+							<tr>
+								<td>{{mission.id}}</td>
+								<td>{{mission.title}}</td>
+								<td>{{mission.description}}</td>
+								<td>{{mission.price}}</td>
+								<td>{{mission.deadline | date('d-m-Y')}}</td>
+								<td>{{mission.createdAt | date('d-m-Y')}}</td>
+								<td>
+									<a href="{{path('mission_edit', {id: mission.id})}}">edit</a>
+									&nbsp
+									<a href="{{path('mission_delete', {id: mission.id})}}">delete</a>
+									&nbsp
+								</td>
+							</tr>
+						</tbody>
+					{% endfor %}
+
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+</div></section>{% endblock %}
