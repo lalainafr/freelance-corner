@@ -10,8 +10,11 @@
 				{{app.user}}
 			</button>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" href="#">Profil</a>
-				<a class="dropdown-item" href="#">Missions déposées</a>
+				<a class="dropdown-item" href="{{path('user_profile')}}">Profil</a>
+				{% if app.user and 'ROLE_EMP' in app.user.roles %}
+				<a class="dropdown-item" href="{{path('user_mission')}}">Missions déposées</a>
+				{% endif %}
+				<a class="dropdown-item"  href="{{path('mission_list')}}">Liste des missions</a>
 				<a class="dropdown-item" href="{{path('app_logout')}}">Déconnexion</a>
 			</div>
 		</div>

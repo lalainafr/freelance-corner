@@ -27,6 +27,9 @@ class MissionsController extends AbstractController
         }
         $em->persist($mission);
         $em->flush();
+        if($this->getUser() && in_array('ROLE_EMP', $this->getuser()->getRoles())){
+            return $this->redirectToRoute('user_mission');
+        }
         return $this->redirectToRoute('mission_list');
         }
         return $this->render('missions/new.html.twig', [
@@ -44,6 +47,9 @@ class MissionsController extends AbstractController
         $mission = $form->getData();
         $em->persist($mission);
         $em->flush();
+        if($this->getUser() && in_array('ROLE_EMP', $this->getuser()->getRoles())){
+            return $this->redirectToRoute('user_mission');
+        }
         return $this->redirectToRoute('mission_list');
         }
         return $this->render('missions/edit.html.twig', [
@@ -67,7 +73,9 @@ class MissionsController extends AbstractController
         $mission =  $repo->findOneBy(['id' => $id]);
         $em->remove($mission);
         $em->flush();
-
+        if($this->getUser() && in_array('ROLE_EMP', $this->getuser()->getRoles())){
+            return $this->redirectToRoute('user_mission');
+        }
         return $this->redirectToRoute('mission_list');
     }
 }

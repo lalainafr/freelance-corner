@@ -49,7 +49,7 @@ class AppFixtures extends Fixture
                 ->setEmail('Employeur' . $i . '@test.test')
                 ->setPassword($this->hasher->hashPassword($employeur, 'Employeur*123'))
                 ->setRoles(['ROLE_EMP']);
-            $users[] = $employeur;
+            $usersEmp[] = $employeur;
             $manager->persist($employeur);
         }
 
@@ -73,7 +73,7 @@ class AppFixtures extends Fixture
             $mission->setDeadline($this->faker->dateTimeBetween('+10 day', '20 days'));
             $mission->setPrice(mt_rand(400, 800));
             $mission->setCreatedAt($this->faker->dateTimeBetween('-10 day', '-2 days'));
-            $mission->setUser($users[mt_rand(1, count($users) - 1)]);
+            $mission->setUser($usersEmp[mt_rand(1, count($users) - 1)]);
             $missions[] = $mission;
             $manager->persist($mission);
         }

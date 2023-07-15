@@ -1,22 +1,20 @@
 {% extends 'base1.html.twig' %}
 
 {% block title %}
-	Liste des missions
+	Missions deposées par l'utilisateur
 {% endblock %}
 
 {% block body %}
 	<section>
 		<h1 class="text-primary text-center">
-			- LISTE DES MISSIONS -
+			- MISSIONS DEPOSEES PAR L'UTILISATEUR -
 		</h1>
 		<br>
 		<div class="row justify-content-center">
 			<div class="col-md-9">
-				{% if app.user and 'ROLE_EMP' in app.user.roles %}
-					<a href="{{path('mission_new')}}">
-						Déposer une mission
-					</a>
-				{% endif %}
+				<a href="{{path('mission_new')}}">
+					Déposer une mission
+				</a>
 				<table class="table">
 					<thead>
 						<tr>
@@ -32,9 +30,7 @@
 							<th scope="col">
 								Date création
 							</th>
-							{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
-								<th scope="col">Action</th>
-							{% endif %}
+							<th scope="col">Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -46,23 +42,18 @@
 								<td>{{mission.price}}</td>
 								<td>{{mission.deadline | date('d-m-Y')}}</td>
 								<td>{{mission.createdAt | date('d-m-Y')}}</td>
-								{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
-									<td>
-										<a href="{{path('mission_edit', {id: mission.id})}}">edit</a>
-										&nbsp
-										<a href="{{path('mission_delete', {id: mission.id})}}">delete</a>
-										&nbsp
-									</td>
-								{% endif %}
-
+								<td>
+									<a href="{{path('mission_edit', {id: mission.id})}}">edit</a>
+									&nbsp
+									<a href="{{path('mission_delete', {id: mission.id})}}">delete</a>
+									&nbsp
+								</td>
 							</tr>
 						</tbody>
-					{% endfor %}
+						{% endfor %}
 
-				</tbody>
-			</table>
-		</div>
-
+				</table>
+			</div>
+		</table>
 	</div>
-
-</div></section>{% endblock %}
+</div></div></section>{% endblock %}
