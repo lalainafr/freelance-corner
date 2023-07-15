@@ -22,6 +22,9 @@ class MissionsController extends AbstractController
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
         $mission = $form->getData();
+        if($this->getUser()){
+            $mission->setUser($this->getUser());
+        }
         $em->persist($mission);
         $em->flush();
         return $this->redirectToRoute('mission_list');

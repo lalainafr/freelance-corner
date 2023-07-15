@@ -1,27 +1,19 @@
 <!-- Navigation-->
-	<nav class="navbar navbar-expand-lg navbar-white fixed-top py-3 " id="mainNav">
-		<div class="container px-4 px-lg-5 pb-4">
-			<a class="navbar-brand text-secondary" href="#page-top">
-				<i class="bi bi-arrow-repeat"></i>
-				&nbsp FREELANCE CORNER
-			</a>
-			<button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-white fixed-top py-3 " id="mainNav">
+	<div class="container px-4 px-lg-5 pb-4">
+		<a class="navbar-brand text-secondary" href="#page-top">
+			<i class="bi bi-arrow-repeat"></i>
+			&nbsp FREELANCE CORNER
+		</a>
+		<div class="dropdown">
+			<button class="btn text-secondary btn-md dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				{{app.user}}
 			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ms-auto my-2 my-lg-0">
-					<li class="nav-item">
-						<a class="nav-link text-secondary" <a href="{{path('app_main')}}">Accueil</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-secondary" href="{{path('mission_list')}}">Missions</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-secondary" href="#">Compte</a>
-					</li>
-				</ul>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" href="#">Profil</a>
+				<a class="dropdown-item" href="#">Missions déposées</a>
+				<a class="dropdown-item" href="{{path('app_logout')}}">Déconnexion</a>
 			</div>
 		</div>
-	</nav>
+	</div>
+</nav>
