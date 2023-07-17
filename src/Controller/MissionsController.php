@@ -9,11 +9,14 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 class MissionsController extends AbstractController
 {
-    
+    #[Security("is_granted('ROLE_USER')")]
     #[Route('/mission/new', name: 'mission_new')]
     public function new(EntityManagerInterface $em, Request $request): Response
     {
@@ -37,10 +40,19 @@ class MissionsController extends AbstractController
         ]);
     }
 
+    // Seul l'employeur peut modifier la mission qu'il a déposé
+    #[Security("is_granted('ROLE_EMP')")]
     #[Route('/mission/edit/{id}', name: 'mission_edit')]
     public function edit($id, EntityManagerInterface $em, Request $request, MissionsRepository $repo): Response
     {
         $mission = $repo->findOneBy(['id'=>$id]);
+        $missionUserId = ($mission->getUser()->getId());
+        $currentUserId = $this->getUser()->getId();
+
+        // Rediriger à la page de connexion si la mission n'appartient pas à l'employeur
+        if($missionUserId !== $currentUserId){
+            return $this->redirectToRoute('app_login');
+        }
         $form = $this->createForm(MissionsType::class, $mission);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
@@ -57,6 +69,7 @@ class MissionsController extends AbstractController
         ]);
     }
 
+    #[Security("is_granted('ROLE_USER')")]
     #[Route('/mission/list', name: 'mission_list')]
     public function list(MissionsRepository $repo): Response
     {
@@ -67,10 +80,20 @@ class MissionsController extends AbstractController
         ]);
     }
 
+     // Seul l'employeur peut modifier la mission qu'il a déposé
+     #[Security("is_granted('ROLE_EMP') or is_granted('ROLE_ADMIN')")]
     #[Route('/mission/delete/{id}', name: 'mission_delete')]
     public function remove($id, EntityManagerInterface $em, MissionsRepository $repo): Response
     {
         $mission =  $repo->findOneBy(['id' => $id]);
+        $mission = $repo->findOneBy(['id'=>$id]);
+        $missionUserId = ($mission->getUser()->getId());
+        $currentUserId = $this->getUser()->getId();
+
+        // Rediriger à la page de connexion si la mission n'appartient pas à l'employeur
+        if($missionUserId !== $currentUserId){
+            return $this->redirectToRoute('app_login');
+        }
         $em->remove($mission);
         $em->flush();
         if($this->getUser() && in_array('ROLE_EMP', $this->getuser()->getRoles())){

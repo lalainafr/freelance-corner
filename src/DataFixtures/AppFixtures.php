@@ -39,7 +39,7 @@ class AppFixtures extends Fixture
         $admin->setFullName('Administrateur')
             ->setEmail('admin@test.test')
             ->setPassword($this->hasher->hashPassword($admin, 'Admin*123'))
-            ->setRoles(['ROLE_EMP', 'ROLE_USER']);
+            ->setRoles(['ROLE_ADMIN', 'ROLE_USER']);
         $manager->persist($admin);
 
         // création de l'user employeur
