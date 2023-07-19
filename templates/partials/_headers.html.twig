@@ -11,6 +11,7 @@
 			</button>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				<a class="dropdown-item" href="{{path('user_profile')}}">Profil</a>
+				<a class="dropdown-item" href="{{path('message_new')}}">Formulaire de contact</a>
 				{% if app.user and 'ROLE_EMP' in app.user.roles %}
 				<a class="dropdown-item" href="{{path('user_mission')}}">Missions déposées</a>
 				{% endif %}

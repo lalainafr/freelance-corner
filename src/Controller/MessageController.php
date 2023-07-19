@@ -35,6 +35,9 @@ class MessageController extends AbstractController
             }
             $em->persist($message);
             $em->flush();
+            if($this->getUser()){
+                return $this->redirectToRoute('user_profile');
+            }
             return $this->redirectToRoute('app_main');
         }
         return $this->render('message/new.html.twig', [
