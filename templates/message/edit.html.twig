@@ -1,0 +1,25 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}
+    Modifier un message
+{% endblock %}
+
+{% block body %}
+<section>
+    <h1 class="text-primary text-center"> - MODIFIER UN MESSAGE - </h1>
+    <br><br>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            {{ form_start(form) }}
+            {{ form_row(form.fullname)}}
+            {{ form_row(form.email) }}
+            {{ form_row(form.phone)}}
+            {{ form_row(form.content, { 'size': '25' })}}
+            {{ form_row(form.submit)}}
+            {{ form_end(form) }}
+        </div>  
+    </div>
+        
+    </div>
+</section>
+{% endblock %}

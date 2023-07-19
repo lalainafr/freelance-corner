@@ -1,7 +1,7 @@
 //  --- JQUERY  --- 
     
     $(document).ready(function () {
-        function animate() {
+        function loop() {
             $('#txt1').hide();
             $('#txt2').hide();
             $('#txt3').hide();
@@ -23,7 +23,7 @@
             window.setTimeout(show_txt3, 20000);
             window.setTimeout(show_txt4, 30000);
         }
-        animate();
+        loop();
 
 
         // ANIMATION PAGE ACCUEIL - FAQ

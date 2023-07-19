@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Message;
 use Faker\Factory;
 use App\Entity\User;
 use Faker\Generator;
@@ -38,6 +39,7 @@ class AppFixtures extends Fixture
         $admin = new User();
         $admin->setFullName('Administrateur')
             ->setEmail('admin@test.test')
+            ->setPhone('01 02 03 04 05')
             ->setPassword($this->hasher->hashPassword($admin, 'Admin*123'))
             ->setRoles(['ROLE_ADMIN', 'ROLE_USER']);
         $manager->persist($admin);
@@ -47,6 +49,7 @@ class AppFixtures extends Fixture
             $employeur = new User();
             $employeur->setFullName($this->faker->name())
                 ->setEmail('Employeur' . $i . '@test.test')
+                ->setPhone('01 02 03 04 05')
                 ->setPassword($this->hasher->hashPassword($employeur, 'Employeur*123'))
                 ->setRoles(['ROLE_EMP']);
             $usersEmp[] = $employeur;
@@ -58,6 +61,7 @@ class AppFixtures extends Fixture
             $freelance = new User();
             $freelance->setFullName($this->faker->name())
                 ->setEmail('Freelance' . $i . '@test.test')
+                ->setPhone('01 02 03 04 05')
                 ->setPassword($this->hasher->hashPassword($freelance, 'Freelance*123'))
                 ->setRoles(['ROLE_USER']);
             $users[] = $freelance;
@@ -77,6 +81,18 @@ class AppFixtures extends Fixture
             $missions[] = $mission;
             $manager->persist($mission);
         }
+
+        //MESSAGE
+        $message = [];
+        for ($i = 0; $i < 10; $i++) {
+            $message = new Message();
+            $message->setTitle('MESSAGE - ' . $this->faker->word(10));
+            $message->setContent($this->faker->text(100));
+            $message->setUser($users[mt_rand(1, count($users) - 1)]);
+            $manager->persist($message);
+        }
+
+
 
 
         $manager->flush();

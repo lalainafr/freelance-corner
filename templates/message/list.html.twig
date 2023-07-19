@@ -1,0 +1,60 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}
+	Liste des messages
+{% endblock %}
+
+{% block body %}
+	<section>
+		<h1 class="text-primary text-center">
+			- LISTE DES MESSAGES DES UTILISATEURS-
+		</h1>
+		<br>
+		<div class="row justify-content-center">
+			<div class="col-md-9">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col" style="width:15%;">Nom & prénom
+							</th>
+							<th scope="col" style="width:10%;">Email
+							</th>
+							<th scope="col" style="width:15%;">Telephone
+							</th>
+							<th scope="col" style="width:40%;">Message
+							</th>
+
+
+							{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
+							<th scope="col" style="width:10%;">Action	</th>
+
+							{% endif %}
+						</tr>
+					</thead>
+					<tbody>
+						{% for message in messages %}
+							<tr>
+								<td>{{message.id}}</td>
+								<td>{{message.fullname}}</td>
+								<td>{{message.email}}</td>
+								<td>{{message.phone}}</td>
+								<td>{{message.content}}</td>
+								{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
+									<td>
+										<a href="{{path('message_edit', {id: message.id})}}">edit</a>
+										&nbsp
+										<a href="{{path('message_delete', {id: message.id})}}">delete</a>
+										&nbsp
+									</td>
+								{% endif %}
+							</tr>
+						</tbody>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div></section>{% endblock %}
+

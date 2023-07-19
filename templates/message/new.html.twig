@@ -1,0 +1,27 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}
+    Créer un message
+{% endblock %}
+
+{% block body %}
+<section>
+    <h1 class="text-primary text-center"> - FORMULAIRE DE CONTACT - </h1>
+    <p class="text-center text-muted"><i>Afin de nous contacter, merci remplir le formulaire suivant</i></p>
+    <br>
+    <div class="row justify-content-center">
+
+        <div class="col-md-4">
+            {{ form_start(form) }}
+            {{ form_row(form.fullname)}}
+            {{ form_row(form.email) }}
+            {{ form_row(form.phone)}}
+            {{ form_row(form.content, { 'size': '25' })}}
+            {{ form_row(form.submit)}}
+            {{ form_end(form) }}
+        </div>  
+    </div>
+        
+    </div>
+</section>
+{% endblock %}
