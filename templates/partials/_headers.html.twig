@@ -15,9 +15,12 @@
 				{% if app.user and 'ROLE_EMP' in app.user.roles %}
 				<a class="dropdown-item" href="{{path('user_mission')}}">Missions déposées</a>
 				{% endif %}
-				<a class="dropdown-item"  href="{{path('mission_list')}}">Liste des missions</a>
+				<a class="dropdown-item"  href="{{path('mission_list')}}">Liste des Missions</a>
 				{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
-				<a class="dropdown-item" href="{{path('message_list')}}">Message des utilisateurs </a>
+				<a class="dropdown-item" href="{{path('message_list')}}">Liste des Messages </a>
+				{% endif %}
+				{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
+				<a class="dropdown-item" href="{{path('user_list')}}">Liste des Utilisateurs </a>
 				{% endif %}
 				<a class="dropdown-item" href="{{path('app_logout')}}">Déconnexion</a>
 			</div>
