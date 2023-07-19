@@ -52,12 +52,6 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-        if($this->security->getUser() && in_array('ROLE_EMP', $this->security->getuser()->getRoles())){
-            return new RedirectResponse($this->urlGenerator->generate('user_mission'));
-        }
-        if($this->security->getUser() && in_array('ROLE_ADMIN', $this->security->getuser()->getRoles())){
-            return new RedirectResponse($this->urlGenerator->generate('admin'));
-        }
         return new RedirectResponse($this->urlGenerator->generate('user_profile'));
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }

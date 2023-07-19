@@ -11,6 +11,11 @@
 			</button>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				<a class="dropdown-item" href="{{path('user_profile')}}">Profil</a>
+				{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
+				<hr>
+				<b> &nbsp&nbsp&nbsp D A S H B O A R D ...</b>
+				<hr>
+				{% endif %}
 				<a class="dropdown-item" href="{{path('message_new')}}">Formulaire de contact</a>
 				{% if app.user and 'ROLE_EMP' in app.user.roles %}
 				<a class="dropdown-item" href="{{path('user_mission')}}">Missions déposées</a>
