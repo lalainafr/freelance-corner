@@ -40,8 +40,8 @@ class MissionsController extends AbstractController
         ]);
     }
 
-    // Seul l'employeur peut modifier la mission qu'il a déposé
-    #[Security("is_granted('ROLE_EMP')")]
+    // Seul l'employeur  peut modifier la mission qu'il a déposé ou l'admin
+    #[Security("is_granted('ROLE_EMP') or is_granted('ROLE_ADMIN')")]
     #[Route('/mission/edit/{id}', name: 'mission_edit')]
     public function edit($id, EntityManagerInterface $em, Request $request, MissionsRepository $repo): Response
     {
@@ -49,8 +49,8 @@ class MissionsController extends AbstractController
         $missionUserId = ($mission->getUser()->getId());
         $currentUserId = $this->getUser()->getId();
 
-        // Rediriger à la page de connexion si la mission n'appartient pas à l'employeur
-        if($missionUserId !== $currentUserId){
+        // Rediriger à la page de connexion si la mission n'appartient pas à l'employeur et user n'est pas admin
+        if($missionUserId !== $currentUserId &&  !in_array('ROLE_ADMIN', $this->getuser()->getRoles())){
             return $this->redirectToRoute('app_login');
         }
         $form = $this->createForm(MissionsType::class, $mission);
@@ -80,7 +80,7 @@ class MissionsController extends AbstractController
         ]);
     }
 
-     // Seul l'employeur peut modifier la mission qu'il a déposé
+     // Seul l'employeur peut modifier la mission qu'il a déposé ou l'admin
      #[Security("is_granted('ROLE_EMP') or is_granted('ROLE_ADMIN')")]
     #[Route('/mission/delete/{id}', name: 'mission_delete')]
     public function remove($id, EntityManagerInterface $em, MissionsRepository $repo): Response
@@ -90,8 +90,8 @@ class MissionsController extends AbstractController
         $missionUserId = ($mission->getUser()->getId());
         $currentUserId = $this->getUser()->getId();
 
-        // Rediriger à la page de connexion si la mission n'appartient pas à l'employeur
-        if($missionUserId !== $currentUserId){
+        // Rediriger à la page de connexion si la mission n'appartient pas à l'employeur et user n'est pas admin
+        if($missionUserId !== $currentUserId &&  !in_array('ROLE_ADMIN', $this->getuser()->getRoles())){
             return $this->redirectToRoute('app_login');
         }
         $em->remove($mission);
