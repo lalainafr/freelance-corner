@@ -21,12 +21,12 @@
 					<thead>
 						<tr>
 							<th scope="col">#</th>
-							<th scope="col" style="width:5%;">Titre
+							<th scope="col">Titre
 							</th>
 							<th scope="col">
 								Date création
 							</th>
-							{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
+							{% if app.user %}
 								<th scope="col">Action</th>
 							{% endif %}
 						</tr>
@@ -37,16 +37,16 @@
 								<td>{{mission.id}}</td>
 								<td>{{mission.title}}</td>
 								<td>{{mission.createdAt | date('d-m-Y')}}</td>
-								{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
 									<td>
+								{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
 										<a href="{{path('mission_edit', {id: mission.id})}}">edit</a>
 										&nbsp
 										<a href="{{path('mission_delete', {id: mission.id})}}">delete</a>
 										&nbsp
+								{% endif %}
 										<a href="{{path('mission_show', {id: mission.id})}}">Show</a>
 										&nbsp
 									</td>
-								{% endif %}
 
 							</tr>
 						</tbody>

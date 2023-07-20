@@ -14,27 +14,32 @@
 			<div class="col-6">
 				<a href="{{path('message_list')}}">Retour à la liste</a>
 				<p>
-					<b>#</b>
-					-
+					<b># - </b>
 					{{message.id}}</p>
 				<p>
-					<b>Nom & prénom</b> -
-					{{message.fullname}}</p>
-				<p>
-					<b>Adresse email</b>
-					-
-					{{message.email}}</p>
-				<p>
-					<b>Numéro téléphone</b>
-					-
-					{{message.phone}}</p>
-				<p>
-					<b>Contenu</b>
-					-
-					{{message.content}}</p>
+					<b>Contenu du message
+					</b>
 				</p>
-			</div>
-		</div>
-
+				{{message.content}}</p>
+		</p>
+	<br>
+		<hr>
+		<p>
+			MESSAGE DEPOSE PAR:
+		</p>
+		<p>
+			<b>Nom & prénom</b>
+			-
+			{{message.fullname}}</p>
+		<p>
+			<b>Adresse email</b>
+			-
+			{{message.email}}</p>
+		<p>
+			<b>Numéro téléphone</b>
+			-
+			{{message.phone}}</p>
+		<p>
+		</p>
 	</div>
-</section>{% endblock %}
+</div></div></section>{% endblock %}

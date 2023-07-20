@@ -36,6 +36,10 @@
 					<b>Date de création</b>
 					-
 					{{mission.createdAt | date('d/m/Y')}}</p>
+				<br>
+				<hr>
+				<p><b>Mission déposée par:</b></p>
+				{{mission.user.fullName}}
 			</div>
 		</div>
 
