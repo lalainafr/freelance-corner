@@ -1,0 +1,40 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}
+	Detail du message
+{% endblock %}
+
+{% block body %}
+	<section>
+		<h1 class="text-primary text-center">
+			- DETAIL DU MESSGAE -
+		</h1>
+		<br>
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<a href="{{path('message_list')}}">Retour à la liste</a>
+				<p>
+					<b>#</b>
+					-
+					{{message.id}}</p>
+				<p>
+					<b>Nom & prénom</b> -
+					{{message.fullname}}</p>
+				<p>
+					<b>Adresse email</b>
+					-
+					{{message.email}}</p>
+				<p>
+					<b>Numéro téléphone</b>
+					-
+					{{message.phone}}</p>
+				<p>
+					<b>Contenu</b>
+					-
+					{{message.content}}</p>
+				</p>
+			</div>
+		</div>
+
+	</div>
+</section>{% endblock %}

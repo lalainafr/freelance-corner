@@ -75,6 +75,16 @@ class MessageController extends AbstractController
         ]);
     }
 
+    #[Security("is_granted('ROLE_USER')")]
+    #[Route('/message/show/{id}', name: 'message_show')]
+    public function detail($id, MessageRepository $repo): Response
+    {
+        $message =  $repo->findOneBy(['id' => $id]);
+        return $this->render('message/show.html.twig', [
+        'message' => $message,
+        ]);
+    }
+
     // Seul l'admin peut supprimer les messages
     #[Security("is_granted('ROLE_ADMIN')")]
     #[Route('/message/delete/{id}', name: 'message_delete')]

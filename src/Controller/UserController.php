@@ -89,6 +89,16 @@ class UserController extends AbstractController
         ]);
     }
 
+    #[Security("is_granted('ROLE_USER')")]
+    #[Route('/user/show/{id}', name: 'user_show')]
+    public function detail($id, UserRepository $repo): Response
+    {
+        $user =  $repo->findOneBy(['id' => $id]);
+        return $this->render('user/show.html.twig', [
+        'user' => $user
+        ]);
+    }
+
     // Seul l'admin peut supprimer les utilisateurs
     #[Security("is_granted('ROLE_ADMIN')")]
     #[Route('/user/delete/{id}', name: 'user_delete')]

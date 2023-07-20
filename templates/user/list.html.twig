@@ -11,7 +11,7 @@
 		</h1>
 		<br>
 		<div class="row justify-content-center">
-			<div class="col-md-10">
+			<div class="col-6">
 				<a href="{{path('user_new')}}">
 					Ajouter une utilisateur
 				</a>
@@ -25,14 +25,6 @@
 							</th>
 							<th scope="col">Telephone
 							</th>
-							<th scope="col" style="width:10%;">Mot de passe
-							</th>
-							<th scope="col">Roles
-							</th>
-							{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
-								<th scope="col" style="width:10%;">Action
-								</th>
-							{% endif %}
 						</tr>
 					</thead>
 					<tbody>
@@ -42,17 +34,14 @@
 								<td>{{user.fullname}}</td>
 								<td>{{user.email}}</td>
 								<td>{{user.phone}}</td>
-								<td>{{user.password}}</td>
-								<td>
-									{% for role in user.roles %}
-										{{role}}
-									{% endfor %}
-								</td>
+
 								{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
 									<td>
 										<a href="{{path('user_edit', {id: user.id})}}">edit</a>
 										&nbsp
 										<a href="{{path('user_delete', {id: user.id})}}">delete</a>
+										&nbsp
+										<a href="{{path('user_show', {id: user.id})}}">show</a>
 										&nbsp
 									</td>
 								{% endif %}

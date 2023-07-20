@@ -80,13 +80,22 @@ class MissionsController extends AbstractController
         ]);
     }
 
+    #[Security("is_granted('ROLE_USER')")]
+    #[Route('/mission/show/{id}', name: 'mission_show')]
+    public function detail($id, MissionsRepository $repo): Response
+    {
+        $mission =  $repo->findOneBy(['id' => $id]);
+        return $this->render('missions/show.html.twig', [
+        'mission' => $mission
+        ]);
+    }
+
      // Seul l'employeur peut modifier la mission qu'il a déposé ou l'admin
      #[Security("is_granted('ROLE_EMP') or is_granted('ROLE_ADMIN')")]
     #[Route('/mission/delete/{id}', name: 'mission_delete')]
     public function remove($id, EntityManagerInterface $em, MissionsRepository $repo): Response
     {
         $mission =  $repo->findOneBy(['id' => $id]);
-        $mission = $repo->findOneBy(['id'=>$id]);
         $missionUserId = ($mission->getUser()->getId());
         $currentUserId = $this->getUser()->getId();
 

@@ -1,0 +1,46 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}
+	Detail de l'Utilisateur
+{% endblock %}
+
+{% block body %}
+	<section>
+		<h1 class="text-primary text-center">
+			- DETAIL DE L'UTILISATEUR -
+		</h1>
+		<br>
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<a href="{{path('user_list')}}">Retour à la liste</a>
+				<p>
+					<b>#</b>
+					-
+					{{user.id}}</p>
+				<p>
+					<b>Nom & prénom</b> -
+					{{user.fullname}}</p>
+				<p>
+					<b>Adresse email</b>
+					-
+					{{user.email}}</p>
+				<p>
+					<b>Numéro téléphone</b>
+					-
+					{{user.phone}}</p>
+				<p>
+					<b>Mot de passe</b>
+					-
+					{{user.password}}</p>
+				<p>
+					<b>Roles</b>
+					-
+					{% for role in user.roles %}
+						{{role}}
+					{% endfor %}
+				</p>
+			</div>
+		</div>
+
+	</div>
+</section>{% endblock %}

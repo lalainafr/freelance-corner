@@ -11,7 +11,7 @@
 		</h1>
 		<br>
 		<div class="row justify-content-center">
-			<div class="col-md-10">
+			<div class="col-6">
 				{% if app.user and 'ROLE_EMP' in app.user.roles %}
 					<a href="{{path('mission_new')}}">
 						Déposer une mission
@@ -23,12 +23,6 @@
 							<th scope="col">#</th>
 							<th scope="col" style="width:5%;">Titre
 							</th>
-							<th scope="col" style="width:50%;">Description
-							</th>
-							<th scope="col">Prix
-							</th>
-
-							<th scope="col">Délais</th>
 							<th scope="col">
 								Date création
 							</th>
@@ -42,15 +36,14 @@
 							<tr>
 								<td>{{mission.id}}</td>
 								<td>{{mission.title}}</td>
-								<td>{{mission.description}}</td>
-								<td>{{mission.price}}</td>
-								<td>{{mission.deadline | date('d-m-Y')}}</td>
 								<td>{{mission.createdAt | date('d-m-Y')}}</td>
 								{% if app.user and 'ROLE_ADMIN' in app.user.roles %}
 									<td>
 										<a href="{{path('mission_edit', {id: mission.id})}}">edit</a>
 										&nbsp
 										<a href="{{path('mission_delete', {id: mission.id})}}">delete</a>
+										&nbsp
+										<a href="{{path('mission_show', {id: mission.id})}}">Show</a>
 										&nbsp
 									</td>
 								{% endif %}
