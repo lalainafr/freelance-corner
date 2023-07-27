@@ -86,7 +86,6 @@ class AppFixtures extends Fixture
         $message = [];
         for ($i = 0; $i < 10; $i++) {
             $message = new Message();
-            $message->setTitle('MESSAGE - ' . $this->faker->word(10));
             $message->setContent($this->faker->text(100));
             $message->setUser($users[mt_rand(1, count($users) - 1)]);
             $manager->persist($message);
